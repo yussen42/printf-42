@@ -6,28 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:22:57 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/28 10:40:17 by yussen           ###   ########.fr       */
+/*   Updated: 2025/06/29 18:27:37 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-static int	base(int n)
-{
-	int	res;
-
-	res = 0;
-	if (n <= 0)
-	{
-		res++;
-	}
-	while (n != 0)
-	{
-		n = n / 10;
-		res++;
-	}
-	return (res);
-}
 
 static char	*fill(int n, char *res, int i)
 {
@@ -63,7 +46,7 @@ char	*ft_itoa(int n)
 	int		n_base;
 	char	*res;
 
-	n_base = base(n);
+	n_base = ft_base(n);
 	res = (char *)malloc(n_base + 1);
 	if (!res)
 		return (NULL);

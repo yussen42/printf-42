@@ -6,28 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:58:25 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/28 10:34:54 by yussen           ###   ########.fr       */
+/*   Updated: 2025/06/29 18:29:50 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-static int	ft_base(int n)
-{
-	int	res;
-
-	res = 0;
-	if (n <= 0)
-	{
-		res++;
-	}
-	while (n != 0)
-	{
-		n = n / 10;
-		res++;
-	}
-	return (res);
-}
 
 int	ifd(int number)
 {

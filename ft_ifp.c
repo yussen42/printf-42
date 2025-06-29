@@ -6,24 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:35:56 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/28 10:34:58 by yussen           ###   ########.fr       */
+/*   Updated: 2025/06/29 18:24:24 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-static unsigned long long	base(unsigned long long n)
-{
-	unsigned long long	res;
-
-	res = 0;
-	while (n != 0)
-	{
-		n = n / 16;
-		res++;
-	}
-	return (res);
-}
 
 static int	print_pointer(char *res, char *temp, unsigned long long pointer)
 {

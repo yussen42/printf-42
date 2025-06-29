@@ -12,7 +12,8 @@ SRC = 	ft_printf.c \
 		ft_ifu.c \
 		ft_ifp.c \
 		ft_ifx.c \
-		ft_ifX.c
+		ft_ifX.c \
+		utils.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -28,5 +29,17 @@ fclean : clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+# TEST = main
+# TEST_SRC = main.c
+# TEST_OBJ = $(TEST_SRC:.c=.o)
+# EXEC = $(TEST)
+
+# test: $(NAME) $(TEST_OBJ)
+# 	cc -g $(TEST_OBJ) $(NAME) -o $(EXEC)
+
+# run: test
+# 	./$(EXEC)
+
 
 .PHONY: all re fclean clean
