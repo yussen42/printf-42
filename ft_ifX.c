@@ -1,0 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ifX.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/27 17:05:13 by yussen            #+#    #+#             */
+/*   Updated: 2025/06/28 10:35:17 by yussen           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "printf.h"
+
+static unsigned long long	base(unsigned long long n)
+{
+	unsigned long long	res;
+
+	res = 0;
+	while (n != 0)
+	{
+		n = n / 16;
+		res++;
+	}
+	return (res);
+}
+
+int	ifx_up(unsigned long long upperhexadecimal)
+{
+	char	*temp;
+	int		i;
+	char	*res;
+	int		return_v;
+
+	res = "0123456789ABCDEF";
+	i = base(upperhexadecimal);
+	return_v = base(upperhexadecimal);
+	temp = malloc(base(upperhexadecimal) + 1);
+	if (!temp)
+		return (0);
+	temp[i] = '\0';
+	if (upperhexadecimal == 0)
+	{
+		temp[i - 1] = '0';
+		return_v = 1;
+	}
+	while (upperhexadecimal)
+	{
+		temp[i-- - 1] = res[upperhexadecimal % 16];
+		upperhexadecimal /= 16;
+	}
+	ifs(temp);
+	free(temp);
+	return (return_v);
+}
