@@ -6,13 +6,13 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:35:56 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/29 18:24:24 by yussen           ###   ########.fr       */
+/*   Updated: 2025/06/30 10:08:38 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-static int	print_pointer(char *res, char *temp, unsigned long long pointer)
+static int	print_pointer(char *res, char *temp, size_t pointer)
 {
 	int		i;
 	int		return_v;
@@ -31,7 +31,7 @@ static int	print_pointer(char *res, char *temp, unsigned long long pointer)
 	return (return_v + 2);
 }
 
-int	ifp(unsigned long long pointer)
+int	ifp(size_t pointer)
 {
 	char	*temp;
 	char	*res;

@@ -6,7 +6,7 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:54:27 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/29 18:21:29 by yussen           ###   ########.fr       */
+/*   Updated: 2025/06/30 09:55:01 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	whatsformat(va_list *args, char c)
 	if (c == 'u')
 		i += ifu(va_arg(*args, unsigned int));
 	if (c == 'p')
-		i += ifp(va_arg(*args, unsigned long long));
+		i += ifp(va_arg(*args, size_t));
 	if (c == 'x')
-		i += ifx(va_arg(*args, unsigned long long));
+		i += ifx(va_arg(*args, unsigned int));
 	if (c == 'X')
-		i += ifx_up(va_arg(*args, unsigned long long));
+		i += ifx_up(va_arg(*args, unsigned int));
 	return (i);
 }
