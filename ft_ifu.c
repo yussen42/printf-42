@@ -6,11 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:13:55 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/29 18:22:46 by yussen           ###   ########.fr       */
+/*   Updated: 2025/07/02 19:00:59 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static void	ft_putchar(char c)
 {
@@ -22,6 +22,8 @@ static unsigned int	base_unsigned(unsigned int n)
 	unsigned int	res;
 
 	res = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		n = n / 10;

@@ -1,28 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ifs.c                                           :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/26 14:53:04 by yussen            #+#    #+#             */
-/*   Updated: 2025/07/02 15:02:19 by yussen           ###   ########.fr       */
+/*   Created: 2025/06/29 18:24:09 by yussen            #+#    #+#             */
+/*   Updated: 2025/07/03 02:24:48 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
-int	ifs(char *str)
+unsigned long long	base_ull(unsigned long long n)
 {
-	int	i;
+	unsigned long long	res;
 
-	i = 0;
-	if (!str)
-		return (ifs("(null)"));
-	while (str[i])
+	res = 0;
+	while (n != 0)
 	{
-		write(1, &str[i], 1);
-		i++;
+		n = n / 16;
+		res++;
 	}
-	return (i);
+	return (res);
+}
+
+int	base_i(int n)
+{
+	int	res;
+
+	res = 0;
+	if (n <= 0)
+	{
+		res++;
+	}
+	while (n != 0)
+	{
+		n = n / 10;
+		res++;
+	}
+	return (res);
 }

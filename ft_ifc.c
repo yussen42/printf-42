@@ -6,11 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:47:34 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/28 10:34:50 by yussen           ###   ########.fr       */
+/*   Updated: 2025/07/02 15:02:05 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ifc(int character)
 {

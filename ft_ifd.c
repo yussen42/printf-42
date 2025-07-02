@@ -6,11 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:58:25 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/29 18:29:50 by yussen           ###   ########.fr       */
+/*   Updated: 2025/07/03 02:28:22 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ifd(int number)
 {
@@ -18,10 +18,10 @@ int	ifd(int number)
 	char	*res;
 	size_t	i;
 
-	return_v = ft_base(number);
+	return_v = base_i(number);
 	i = 0;
 	res = ft_itoa(number);
-	while (i <= ft_strlen(res))
+	while (i < ft_strlen(res))
 	{
 		write(1, &res[i], 1);
 		i++;

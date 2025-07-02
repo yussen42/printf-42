@@ -6,11 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 02:30:17 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/29 18:21:16 by yussen           ###   ########.fr       */
+/*   Updated: 2025/07/03 02:30:18 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
@@ -21,20 +21,22 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	return_v = 0;
 	va_start(args, format);
-	while (i <= ft_strlen(format))
+	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
-			ifc('%');
 			i += 2;
-			return_v++;
+			return_v += ifc('%');
 		}
-		if (format[i] == '%' && format[i + 1] != '%')
-			return_v += whatsformat(&args, (char)format[++i]);
 		else
-			return_v += write(1, &format[i], 1);
-		i++;
+		{		
+			if (format[i] == '%' && (format[i + 1] != '%'))
+				return_v += whats_format(&args, (char)format[i += 1]);
+			else
+				return_v += write(1, &format[i], 1);
+			i++;
+		}
 	}
 	va_end(args);
-	return (return_v -1);
+	return (return_v);
 }

@@ -6,11 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 17:05:13 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/30 10:05:13 by yussen           ###   ########.fr       */
+/*   Updated: 2025/07/03 02:29:03 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ifx_up(unsigned int upperhexadecimal)
 {
@@ -22,9 +22,9 @@ int	ifx_up(unsigned int upperhexadecimal)
 	res = "0123456789ABCDEF";
 	if (upperhexadecimal == 0)
 		return (ifs("0"));
-	i = base(upperhexadecimal);
-	return_v = base(upperhexadecimal);
-	temp = malloc(base(upperhexadecimal) + 1);
+	i = base_ull(upperhexadecimal);
+	return_v = base_ull(upperhexadecimal);
+	temp = malloc(base_ull(upperhexadecimal) + 1);
 	if (!temp)
 		return (0);
 	temp[i] = '\0';

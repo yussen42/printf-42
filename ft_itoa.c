@@ -6,11 +6,11 @@
 /*   By: yussen <yussen@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:22:57 by yussen            #+#    #+#             */
-/*   Updated: 2025/06/29 18:27:37 by yussen           ###   ########.fr       */
+/*   Updated: 2025/07/03 02:27:01 by yussen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static char	*fill(int n, char *res, int i)
 {
@@ -46,7 +46,7 @@ char	*ft_itoa(int n)
 	int		n_base;
 	char	*res;
 
-	n_base = ft_base(n);
+	n_base = base_i(n);
 	res = (char *)malloc(n_base + 1);
 	if (!res)
 		return (NULL);
